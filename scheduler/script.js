@@ -6,6 +6,8 @@ $(function () {
 
     let currentHour = today.getHours();
 
+    $("#currentDay").text(moment().format("dddd, MMMM Do, YYYY"));
+
 
     for (var i = 0; i < eventText.length; i++) {
         var currentTextElement = eventText[i];
