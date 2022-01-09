@@ -1,5 +1,5 @@
 $(document).ready()
-$function () {
+$(function () {
 
 
     var currentHour = 12;
@@ -11,11 +11,11 @@ $function () {
         var reindexedHour = currentHour - 9;
 
         if (i === reindexedHour) {
-            currentTextElement.classList.add("#present")
+            currentTextElement.classList.add("present")
         } else if (i < reindexedHour) {
-            currentTextElement.classList.add("#past")
+            currentTextElement.classList.add("past")
         } else if (i > reindexedHour) {
-            currentTextElement.classList.add("#future")
+            currentTextElement.classList.add("future")
         }
     }
 
@@ -23,4 +23,4 @@ $function () {
 
 
 
-}
+});
