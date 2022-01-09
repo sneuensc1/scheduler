@@ -1,10 +1,11 @@
-$(document).ready()
 $(function () {
 
-
-    var currentHour = 12;
-
     var eventText = $("#tacos textarea");
+
+    let today = new Date();
+
+    let currentHour = today.getHours();
+
 
     for (var i = 0; i < eventText.length; i++) {
         var currentTextElement = eventText[i];
