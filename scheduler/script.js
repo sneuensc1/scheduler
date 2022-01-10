@@ -1,5 +1,6 @@
 $(function () {
 
+    //get events from local storage
     let scheduleList = localStorage.getItem("eventKeyStorage");
     if(scheduleList === null) {
         scheduleList = []
@@ -12,13 +13,14 @@ $(function () {
 
     var eventListKey = "eventList";
 
+    //set the date and time
     let today = new Date();
 
     let currentHour = today.getHours();
 
     $("#currentDay").text(moment().format("dddd, MMMM Do, YYYY"));
 
-
+    //loop to set the indexes to match the current hour and to load the stored events
     for (var i = 0; i < eventText.length; i++) {
         var currentTextElement = eventText[i];
         var reindexedHour = currentHour - 9;
@@ -35,6 +37,7 @@ $(function () {
         }
     }
 
+    //save events in calendar to local storage
     $(".saveBtn").click(function() {
 
         var eventList = [];
@@ -45,6 +48,4 @@ $(function () {
 
         localStorage.setItem("eventKeyStorage", JSON.stringify(eventList));
     });
-
-
 });
