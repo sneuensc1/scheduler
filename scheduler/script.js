@@ -30,7 +30,7 @@ $(function () {
         } else if (i > reindexedHour) {
             currentTextElement.classList.add("future")
         }
-        if (scheduleList[i] < scheduleList.length) {
+        if (i < scheduleList.length) {
             $(eventText[i]).val(scheduleList[i]);  
         }
     }
