@@ -2,6 +2,8 @@ $(function () {
 
     var eventText = $("#tacos textarea");
 
+    var eventListKey = "eventList";
+
     let today = new Date();
 
     let currentHour = today.getHours();
@@ -22,7 +24,13 @@ $(function () {
         }
     }
 
+    var eventList = [];
 
+    for (var i = 0; i < eventText.length; i++) {
+        eventList[i] = $(eventText[i]).val();
+    };
+
+    localStorage.setItem("eventKeyStorage", JSON,stringify("eventList"));
 
 
 
