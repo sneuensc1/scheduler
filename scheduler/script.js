@@ -24,6 +24,8 @@ $(function () {
         }
     }
 
+    $("saveBtn").click(function() {
+
     var eventList = [];
 
     for (var i = 0; i < eventText.length; i++) {
@@ -31,7 +33,7 @@ $(function () {
     };
 
     localStorage.setItem("eventKeyStorage", JSON,stringify("eventList"));
-
+    });
 
 
 });
