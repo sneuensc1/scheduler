@@ -24,15 +24,15 @@ $(function () {
         }
     }
 
-    $("saveBtn").click(function() {
+    $(".saveBtn").click(function() {
 
-    var eventList = [];
+        var eventList = [];
 
-    for (var i = 0; i < eventText.length; i++) {
-        eventList[i] = $(eventText[i]).val();
-    };
+        for (var i = 0; i < eventText.length; i++) {
+            eventList[i] = $(eventText[i]).val();
+        };
 
-    localStorage.setItem("eventKeyStorage", JSON,stringify("eventList"));
+        localStorage.setItem("eventKeyStorage", JSON.stringify(eventList));
     });
 
 
