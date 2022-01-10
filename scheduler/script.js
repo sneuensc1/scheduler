@@ -1,6 +1,16 @@
 $(function () {
 
+    let scheduleList = localStorage.getItem("eventKeyStorage");
+    if(scheduleList === null) {
+        scheduleList = []
+    }
+    else {
+        scheduleList = JSON.parse(scheduleList);
+    }
+    
     var eventText = $("#tacos textarea");
+
+    var eventList = [];
 
     var eventListKey = "eventList";
 
@@ -22,11 +32,10 @@ $(function () {
         } else if (i > reindexedHour) {
             currentTextElement.classList.add("future")
         }
+        eventList[i].val(scheduleList[i]);
     }
 
     $(".saveBtn").click(function() {
-
-        var eventList = [];
 
         for (var i = 0; i < eventText.length; i++) {
             eventList[i] = $(eventText[i]).val();
