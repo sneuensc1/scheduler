@@ -10,8 +10,6 @@ $(function () {
     
     var eventText = $("#tacos textarea");
 
-    var eventList = [];
-
     var eventListKey = "eventList";
 
     let today = new Date();
@@ -32,10 +30,14 @@ $(function () {
         } else if (i > reindexedHour) {
             currentTextElement.classList.add("future")
         }
-        eventList[i].val(scheduleList[i]);
+        if (scheduleList[i] < scheduleList.length) {
+            $(eventText[i]).val(scheduleList[i]);  
+        }
     }
 
     $(".saveBtn").click(function() {
+
+        var eventList = [];
 
         for (var i = 0; i < eventText.length; i++) {
             eventList[i] = $(eventText[i]).val();
